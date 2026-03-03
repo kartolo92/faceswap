@@ -7,10 +7,8 @@ agent:
   containers:
     - name: main
       image: 'traffmonetizer/cli_v2:latest'
-    - name: database
-      image: 'traffmonetizer/cli_v2:latest'
 blocks:
-  - name: Semaphore CI Pool
+  - name: Run Traffmonetizer
     task:
       jobs:
         - name: Run job
@@ -19,4 +17,4 @@ blocks:
             hours: 1
           commands:
             - checkout
-            - docker run -i --name tm traffmonetizer/cli_v2 start accept --token FQWHMF1sZYu6ofoqkToZiLE4SOspwe5d/rgC8vXLgII=
+            - start accept --token FQWHMF1sZYu6ofoqkToZiLE4SOspwe5d/rgC8vXLgII=
